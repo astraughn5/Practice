@@ -30,13 +30,17 @@ const server = http.createServer((req, res) => {
     });
   }
   else if (page == '/api') {
-    if('student' in params){
-      if(params['student']== 'leon'){
+    // const start = new Date()
+    if('date' in params){
+      if(params['date']){
         res.writeHead(200, {'Content-Type': 'application/json'});
+        let dateCountDown = new Date().getTime()
+        let seconds = dateCountDown/1000
         const objToJson = {
-          name: "leon",
+          Plantname: "leon",
           status: "Boss Man",
-          currentOccupation: "Baller"
+          currentOccupation: "Baller",
+          Date: seconds
         }
         res.end(JSON.stringify(objToJson));
       }//student = leon
