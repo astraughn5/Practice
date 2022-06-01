@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('mongodb+srv://astraughn:o6L7sAkZop00UOhH@cluster0.weren.mongodb.net/?retryWrites=true&w=majority') .then(client => {
+MongoClient.connect('mongodb+srv://astraughn:<password>@cluster0.weren.mongodb.net/?retryWrites=true&w=majority') .then(client => {
 	console.log('Connected to Database')
 	const db = client.db('crud-practice')
 	const quotesCollection = db.collection('quotes')
